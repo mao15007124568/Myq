@@ -4,27 +4,6 @@
      :right-options="{showMore: true}"  :left-options="{showBack: false}" @on-click-more="login">首页</x-header>
     <br>
 
-    <!-- <div style="margin: 10px;overflow: hidden;" v-for="item in list2">
-      <masker style="border-radius: 2px;">
-        <div class="m-img" :style="{backgroundImage: 'url(' + item.img + ')'}"></div>
-        <div slot="content" class="m-title">
-          {{item.title}}
-          <br/>
-          <span class="m-time">2016-03-18</span>
-        </div>
-      </masker>
-    </div>
-    <div style="margin: 10px;overflow: hidden;">
-      <masker style="border-radius: 2px;" color="F9C90C" :opacity="0.8">
-        <div class="m-img" style="background-image:url(https://cdn.xiaotaojiang.com/uploads/56/4b3601364b86fdfd234ef11d8712ad/_.jpg)"></div>
-        <div slot="content" class="m-title">
-          VUX
-          <br/>
-          <span class="m-time">2016-03-18</span>
-        </div>
-      </masker>
-    </div>      -->
-
     <swiper loop auto :list="demo06_list" :index="demo06_index"  @on-index-change="demo06_onIndexChange"></swiper>
     
      <grid :cols="4">
@@ -82,15 +61,15 @@ import { Tabbar, TabbarItem, Group, Cell, XHeader, TransferDom, Actionsheet, Swi
 
 const baseList = [{
   url: 'javascript:',
-  img: 'https://ww1.sinaimg.cn/large/663d3650gy1fq66vvsr72j20p00gogo2.jpg',
+  img: 'src/assets/cheyou.png',
   title: '送你一朵fua'
 }, {
   url: 'javascript:',
-  img: 'https://ww1.sinaimg.cn/large/663d3650gy1fq66vw1k2wj20p00goq7n.jpg',
+  img: 'src/assets/lanjian.png',
   title: '送你一辆车'
 }, {
   url: 'javascript:',
-  img: 'https://ww1.sinaimg.cn/large/663d3650gy1fq66vw1k2wj20p00goq7n.jpg',
+  img: 'src/assets/shenbao.png',
   title: '送你一次旅行',
   fallbackImg: 'https://ww1.sinaimg.cn/large/663d3650gy1fq66vw50iwj20ff0aaaci.jpg'
 }]

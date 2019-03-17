@@ -1,41 +1,103 @@
 <template>
   <div>
-    <div class="vux-demo">
-      <img class="logo" src="../assets/vux_logo.png">
-      <h1> </h1>
-    </div>
-    <group title="cell demo">
-      <cell title="VUX" value="cool" is-link></cell>
-    </group>
+    <divider>{{ '我的'}}</divider>
+	   <card :header="{title: 'My wallet'}">
+      <div slot="content" class="card-demo-flex card-demo-content01">
+        <div class="vux-1px-r">
+          <span>1130</span>
+          <br/>
+          {{ 'Point' }}
+        </div>
+        <div class="vux-1px-r">
+          <span>15</span>
+          <br/>
+          {{ 'Coupon' }}
+        </div>
+        <div class="vux-1px-r">
+          <span>5</span>
+          <br/>
+          {{ '信用记录' }}
+        </div>
+        <div>
+          <span>88次</span>
+          <br/>
+          {{ '已练车' }}
+        </div>
+      </div>
+    </card>
+
+    <br>
+    <divider>{{ 'With footer' }}</divider>
+     <card :header="{title: 'Product details' }" :footer="{title:'More',link:'/component/panel'}">
+      <p slot="content" class="card-padding">{{ 'Custom content' }}</p>
+    </card>
+
+    <br>
+    <divider>{{ 'Use header slot and content slot' }}</divider>
+    <card>
+      <img slot="header" src="http://placeholder.qiniudn.com/640x300" style="width:100%;display:block;">
+      <div slot="content" class="card-padding">
+        <p style="color:#999;font-size:12px;">Posted on January 21, 2015</p>
+        <p style="font-size:14px;line-height:1.2;">Quisque eget vestibulum nulla. Quisque quis dui quis ex ultricies efficitur vitae non felis. Phasellus quis nibh hendrerit..</p>
+      </div>
+    </card>
   </div>
 </template>
 
+<i18n>
+Simple card with header and content:
+  zh-CN: 带有标题和内容的简单卡片
+My wallet:
+  zh-CN: 我的钱包
+Point:
+  zh-CN: 京豆
+Coupon:
+  zh-CN: 京东券
+Gift card:
+  zh-CN: 京东卡/E卡
+Cash:
+  zh-CN: 七天待还
+With footer:
+  zh-CN: 带有 footer 的卡片
+Product details:
+  zh-CN: 商品详情
+More:
+  zh-CN: 查看更多
+Custom content:
+  zh-CN: 自定义内容
+Use header slot and content slot:
+  zh-CN: 使用 header slot 和 content slot
+</i18n>
+
 <script>
-import { Group, Cell } from 'vux'
+import { Divider, Card } from 'vux'
 
 export default {
   components: {
-    Group,
-    Cell
-  },
-  data () {
-    return {
-      // note: changing this line won't causes changes
-      // with hot-reload because the reloaded component
-      // preserves its current state and we are modifying
-      // its initial state.
-      msg: 'Hello World!'
-    }
+    Card,
+    Divider
   }
 }
 </script>
 
-<style>
-.vux-demo {
-  text-align: center;
+<style scoped lang="less">
+@import '~vux/src/styles/1px.less';
+
+.card-demo-flex {
+  display: flex;
 }
-.logo {
-  width: 100px;
-  height: 100px
+.card-demo-content01 {
+  padding: 10px 0;
+}
+.card-padding {
+  padding: 15px;
+}
+.card-demo-flex > div {
+  flex: 1;
+  text-align: center;
+  font-size: 12px;
+}
+.card-demo-flex span {
+  color: #f74c31;
 }
 </style>
