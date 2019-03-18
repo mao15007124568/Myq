@@ -33,14 +33,14 @@
       </grid-item>
     </grid>
 
-    <panel :header="'推荐'" :list="list" :footer="footer" :type="type"></panel>
+    <panel :header="'推荐'" :list="list2" :footer="footer" :type="type"></panel>
 
      <tabbar>
       <tabbar-item>
         <img slot="icon" src="../assets/home.png">
         <span slot="label">首页</span>
       </tabbar-item>
-      <tabbar-item show-dot link="/now" >
+      <tabbar-item show-dot>
         <img slot="icon" src="../assets/book.png">
         <span slot="label">附近</span>
       </tabbar-item>
@@ -48,7 +48,7 @@
         <img slot="icon" src="../assets/application.png">
         <span slot="label">附近</span>
       </tabbar-item>
-      <tabbar-item badge="2">
+      <tabbar-item badge="2" show-dot link="/now" >
         <img slot="icon" src="../assets/message.png">
         <span slot="label">我的</span>
       </tabbar-item>
@@ -154,6 +154,20 @@ export default {
         url: 'http://vux.li'
       }
     }
+  },
+  created () {
+    this.$http.post('https://api.apiopen.top/getJoke').then(({data}) => {
+      let _this = this;
+      console.log(data)
+      var new_data = data.result.map((item, index) => ({
+          src: item.header ,
+          fallbackSrc: item.header,
+          title: item.name,
+          desc: item.text,
+        }))
+      console.log(new_data)
+      _this.list = new_data
+    })
   },
   methods: {
     demo06_onIndexChange (index) {

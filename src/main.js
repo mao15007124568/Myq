@@ -7,8 +7,10 @@ import App from './App'
 import Home from './components/Home'
 import Login from './components/Login'
 import now from './components/now'
+import { AjaxPlugin } from 'vux'
 
 Vue.use(VueRouter)
+Vue.use(AjaxPlugin)
 
 const routes = [{
   path: '/',

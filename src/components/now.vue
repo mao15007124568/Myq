@@ -6,12 +6,12 @@
         <div class="vux-1px-r">
           <span>1130</span>
           <br/>
-          {{ 'Point' }}
+          {{ '信用积分' }}
         </div>
         <div class="vux-1px-r">
           <span>15</span>
           <br/>
-          {{ 'Coupon' }}
+          {{ '我的等级' }}
         </div>
         <div class="vux-1px-r">
           <span>5</span>
